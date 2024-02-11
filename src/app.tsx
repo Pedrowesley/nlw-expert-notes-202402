@@ -19,12 +19,20 @@ export function App() {
 
       <div className="grid grid-cols-3 gap-6 auto-rows-[250px]">
         <NewNoteCard />
-        <NoteCard />
-        <NoteCard />
-        <NoteCard />
-        <NoteCard />
-        <NoteCard />
-        <NoteCard />
+        <NoteCard
+          note={{
+            id: "1",
+            date: new Date(),
+            content: "Minha primeira nota",
+          }}
+        />
+        <NoteCard
+          note={{ id: "2", date: new Date(), content: "Minha segunda nota" }}
+        />
+
+        <NoteCard
+          note={{ id: "3", date: new Date(), content: "Minha terceira nota" }}
+        />
       </div>
     </div>
   );
