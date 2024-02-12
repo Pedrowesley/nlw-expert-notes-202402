@@ -26,7 +26,7 @@ This project was bootstrapped with [Vite](https://vitejs.dev/). Vite provides a 
 First, clone the repository to your local machine:
 
 ```sh
-git clone <repository-url>
+git clone https://github.com/Pedrowesley/nlw-expert-notes-202402.git
 ```
 
 Then, navigate to the project directory and install the dependencies:
