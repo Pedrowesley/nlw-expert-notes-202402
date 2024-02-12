@@ -1,31 +1,55 @@
-# React + TypeScript + Vite
+# NLW Expert Notes - ReactJS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+NLW Expert Notes is a note-taking application built with React, TypeScript, and Tailwind CSS. It leverages the SpeechRecognition API to allow users to record notes using their voice.
 
-Currently, two official plugins are available:
+![App Screenshot](./public/mockup/mockup-presentation.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Built With
 
-## Expanding the ESLint configuration
+This project was bootstrapped with [Vite](https://vitejs.dev/). Vite provides a faster and leaner development experience for modern web projects.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Features
 
-- Configure the top-level `parserOptions` property like this:
+- Create new notes using text input or voice recording
+- View existing notes in a clean, organized layout
+- Delete notes as needed
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## Technologies Used
+
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [SpeechRecognition API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition)
+
+## Installation
+
+First, clone the repository to your local machine:
+
+```sh
+git clone <repository-url>
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-# nlw-expert-notes-202402
+Then, navigate to the project directory and install the dependencies:
+
+```sh
+cd nlw-expert-notes
+npm install
+```
+
+## Usage
+
+To start the development server, run:
+
+```sh
+npm run dev
+```
+
+The application will be available at `http://localhost:5173/`.
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
