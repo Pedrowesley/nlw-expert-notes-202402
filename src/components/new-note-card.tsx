@@ -3,7 +3,11 @@ import { X } from 'lucide-react';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import { toast } from 'sonner';
 
-export function NewNoteCard() {
+interface NewNoteCardProps {
+  onCreate: (content: string) => void;
+}
+
+export function NewNoteCard({ onCreate }: NewNoteCardProps) {
   const [shouldShowOnboarding, setShouldShowOnboarding] = useState(true);
   const [content, setContent] = useState('');
 
@@ -21,8 +25,14 @@ export function NewNoteCard() {
 
   const handleSaveNote = (event: FormEvent) => {
     event.preventDefault();
-    console.log(content);
+    onNoteCreateEmmiter(content);
+    setContent('');
+    setShouldShowOnboarding(true);
     toast.success('Nota criada com sucesso!');
+  };
+
+  const onNoteCreateEmmiter = (content: string) => {
+    onCreate(content);
   };
 
   return (
@@ -70,17 +80,21 @@ export function NewNoteCard() {
                 <textarea
                   autoFocus
                   className="text-sm leading-6 text-slate-400 bg-transparent resize-none flex-1 outline-none"
+                  value={content}
                   onChange={handleContentChanged}
                 ></textarea>
               )}
             </div>
 
-            <button
-              className="w-full bg-lime-400 py-4 text-center text-sm text-lime-950 outline-none font-medium hover:bg-lime-500 transition-colors"
-              type="submit"
-            >
-              Salvar nota
-            </button>
+            {!shouldShowOnboarding && (
+              <button
+                disabled={!content}
+                className="w-full bg-lime-400 py-4 text-center text-sm text-lime-950 outline-none font-medium hover:bg-lime-500 transition-colors disabled:bg-lime-300 disabled:text-lime-700 disabled:cursor-not-allowed"
+                type="submit"
+              >
+                Salvar nota
+              </button>
+            )}
           </form>
         </Dialog.Content>
       </Dialog.Portal>
